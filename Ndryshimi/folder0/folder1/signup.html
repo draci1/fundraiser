@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link type="text/css" rel="stylesheet" href="signup.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script>
+  $(document).ready(function() {
+    $("#datepicker").datepicker();
+  });
+    </script>
+</head>
+<body>
+    <div class="container">
+            <img src="../../../shared/images/fundraiser.jpg" />
+        <section>
+            <div class="double-border" style="margin-top:0px;">
+                <h1 style="font-size:40px;font-weight:lighter;font-family:SimSun;opacity:1;">Sign <span style="color:deeppink;">Up</span></h1>
+                <form action="add.php" method="post" name="form1">
+                    	<table>
+                        <tr>
+                        <input placeholder=" First Name" id="txtbox" name="firstname" required/><br />
+                        <input placeholder=" Last Name" id="txtbox" name="lastname" required/><br />
+                        <input name="birthday" type="text" class="form-control" placeholder=" Date" onfocus="(this.type='date')" required/><br />
+                        </tr>
+                        <tr>
+                        <table>
+                        <tr>
+                        <td>
+                        <input type="radio" style="width:30%;" name="gender" value="1" required> Male  
+                        </td>
+                        <td>
+                        <input type="radio" style="width:30%;" name="gender" value="2" required> Female
+                        </td>
+                        <td>
+                        <input type="radio" style="width:30%;" name="gender" value="3" required> Other 
+                        </td>
+                        </tr>
+                        </table><br>
+
+                        <input placeholder=" E-mail" id="txtbox" name="email" required/><br />
+                        <input type="password" placeholder=" Password" id="password" name="password" required/><br />
+                        <input type="password" placeholder=" Re-enter password" id="confirm_password" name="confirmpassword" required/><br />
+                        </tr>
+                        </table>
+                        <input type="submit" name="submit" value="Sign up"><br />
+                 </form>
+              <div style="margin-bottom:5%; width:250px;"><p style="display:inline;font-size:19px;font-weight:lighter;">Have an account? </p><a href="index.php" style="text-decoration:none;"><p id="bonus" style="margin-left:5%;">Sign in!</p></a></div>
+</div>
+        </section>
+        <footer><h1 style="color:gold;text-align:center;font-family:'Times New Roman';font-weight:lighter;">&copy; Fundraiser Copyright 2017</h1></footer>
+    </div>
+    <!--- Source for following script code: http://codepen.io/diegoleme/pen/surIK -->
+    <script>
+        var password = document.getElementById("password")
+  , confirm_password = document.getElementById("confirm_password");
+        var vl = 0;
+        function validatePassword() {
+            if (password.value != confirm_password.value) {
+                confirm_password.setCustomValidity("Passwords Don't Match");
+            } else {
+                confirm_password.setCustomValidity('');
+                vl = 1;
+            }
+        }
+
+        password.onchange = validatePassword;
+        confirm_password.onkeyup = validatePassword;
+	
+    </script>
+    <!--- End of citation -->
+</body>
+</html>
